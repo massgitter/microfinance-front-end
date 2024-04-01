@@ -1,0 +1,6 @@
+.customer-forma {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px;
+  margin-top: -15px;
+}

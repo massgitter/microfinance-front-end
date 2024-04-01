@@ -1,0 +1,62 @@
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer mode="side" opened style="height: auto">
+    <mat-nav-list>
+      <mat-list-item>
+        <button mat-button><mat-icon>dashboard</mat-icon>Dashboard</button>
+      </mat-list-item>
+
+      <mat-list-item routerLink="customers">
+        <button mat-button><mat-icon>people</mat-icon>Customers</button>
+      </mat-list-item>
+
+      <mat-list-item routerLink="profession">
+        <button mat-button><mat-icon>work</mat-icon>Professions</button>
+      </mat-list-item>
+
+      <mat-list-item routerLink="fiscal-years">
+        <button mat-button><mat-icon>watch</mat-icon>Fiscal Year</button>
+      </mat-list-item>
+
+      <mat-list-item routerLink="saving-periods">
+        <button mat-button>
+          <mat-icon>watch</mat-icon>Saving Periods
+        </button>
+      </mat-list-item>
+
+      <mat-list-item routerLink="savings">
+        <button mat-button>
+          <mat-icon>
+            <span class="material-icons"> attach_money </span>
+          </mat-icon>Savings</button>
+      </mat-list-item>
+
+      <div>
+        <mat-list-item>
+          <button mat-button routerLink="registration-fees">
+            <mat-icon>
+              <span class="material-icons"> attach_money </span>
+            </mat-icon>Registration Fees</button>
+        </mat-list-item>
+
+        <mat-list-item>
+          <button mat-button routerLink="onboarding-fees">
+            <mat-icon>
+              <span class="material-icons"> attach_money </span>
+            </mat-icon>Onboard Fees</button>
+        </mat-list-item>
+      </div>
+
+      <mat-list-item>
+        <button mat-button>
+          <mat-icon>
+          <span class="material-icons"> attach_money </span>
+        </mat-icon>Loan
+        </button>
+      </mat-list-item>
+
+    </mat-nav-list>
+  </mat-drawer>
+  <mat-drawer-content style="height: 600px">
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>

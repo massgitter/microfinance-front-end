@@ -1,0 +1,14 @@
+<div>
+  <button mat-stroked-button color="primary" style="float: right" (click)="closeDialog()">
+    <mat-icon>close</mat-icon>
+  </button>
+</div>
+
+<form [formGroup]="pForm" (ngSubmit)="createProfession()">
+  <mat-form-field style="width: 100%">
+    <mat-label>Profession</mat-label>
+    <input matInput placeholder="Profession" formControlName="profession" required>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary">Save</button>
+</form>

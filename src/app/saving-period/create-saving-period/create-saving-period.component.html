@@ -1,0 +1,37 @@
+<div class="example-container">
+  <button mat-stroked-button color="primary" style="float: right" (click)="closeDialog()">
+    <mat-icon>close</mat-icon>
+  </button>
+  <form [formGroup]="spForm" class="saving-form" (ngSubmit)="create()">
+    <div>
+      <mat-form-field>
+        <mat-label>Month</mat-label>
+        <mat-select formControlName="month">
+          <mat-option *ngFor="let month of months" [value]="month">{{month}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <mat-label>Choose a date</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="startsAt" required>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <mat-label>EndDate</mat-label>
+        <input matInput [matDatepicker]="picker1" formControlName="endsAt" required>
+        <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <mat-label>Fiscal Year</mat-label>
+        <mat-select formControlName="fiscalYear">
+          <mat-option *ngFor="let fy of fiscalYears" [value]="fy.id">{{fy.description}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <button mat-raised-button color="primary">Save</button>
+    </div>
+  </form>
+</div>

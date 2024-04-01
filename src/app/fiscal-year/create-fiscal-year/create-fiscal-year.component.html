@@ -1,0 +1,60 @@
+<mat-icon (click)="closeDialog()" style="float: right">close</mat-icon>
+
+<div class="example-container">
+  <form [formGroup]="fyForm" class="saving-form" (ngSubmit)="create()">
+      <div style="display: flex; justify-content: space-evenly">
+        <mat-form-field>
+          <mat-label>Year</mat-label>
+          <mat-select formControlName="year" required>
+            <mat-option *ngFor="let y of years" [value]="y">{{y}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Description</mat-label>
+          <input matInput placeholder="Description" formControlName="description">
+        </mat-form-field>
+      </div>
+
+    <mat-form-field style="width: 100%">
+      <mat-label>Starting Month</mat-label>
+      <mat-select formControlName="startingMonth" required>
+        <mat-option *ngFor="let month of months" [value]="month">{{month}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+      <div style="display: flex; justify-content: space-evenly">
+        <mat-form-field>
+          <mat-label>Payment starts at Date of Each Month</mat-label>
+          <mat-select formControlName="paymentStartsAt" required>
+            <mat-option *ngFor="let d of days" [value]="d">{{d}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Payment is Active for</mat-label>
+          <mat-select formControlName="paymentActiveFor" required>
+            <mat-option *ngFor="let d of days" [value]="d">{{d}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div style="display: flex; justify-content: space-around">
+        <mat-form-field>
+          <mat-label>Starting Date</mat-label>
+          <input matInput [matDatepicker]="picker" formControlName="startsAt" required>
+          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Ending Date</mat-label>
+          <input matInput [matDatepicker]="picker1" formControlName="endsAt" required>
+          <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+          <mat-datepicker #picker1></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <button mat-raised-button color="primary">Save</button>
+  </form>
+</div>
+

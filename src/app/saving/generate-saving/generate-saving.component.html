@@ -1,0 +1,29 @@
+<div>
+  <button mat-stroked-button color="primary" style="float: right" (click)="closeDialog()">
+    <mat-icon>close</mat-icon>
+  </button>
+</div>
+<div class="example-container">
+  <form [formGroup]="savingForm" class="customer-form" (ngSubmit)="generate()">
+    <div>
+      <mat-form-field hidden>
+        <mat-label>Id</mat-label>
+        <input matInput placeholder="id" formControlName="id" required>
+      </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Select Month</mat-label>
+          <mat-select formControlName="month" required>
+            <mat-option *ngFor="let m of months" [value]="m.id">{{m.month}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Amount</mat-label>
+          <input matInput placeholder="Amount" formControlName="amount" required>
+        </mat-form-field>
+
+    </div>
+    <button mat-raised-button color="primary">Save</button>
+  </form>
+</div>
